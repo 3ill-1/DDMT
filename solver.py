@@ -293,7 +293,8 @@ class Solver(object):
         sum_accuracy = []
         sum_precision = []
         sum_recall = []
-        for k in range(0, 100):
+        for k in range(0, 2):
+            start_time2 = datetime.now()
             test_labels = []
             attens_energy = []
             for i, (input_data, labels) in enumerate(self.thre_loader):
@@ -383,6 +384,10 @@ class Solver(object):
             sum_recall.append(recall)
             sum_precision.append(precision)
             sum_accuracy.append(accuracy)
+            end_time2 = datetime.now()
+            time2 = end_time2 - start_time2
+            print("spend time2:", time2)
+            
         max_index = sum_f_score.index(np.max(sum_f_score))
         max_f_score = sum_f_score[max_index]
         max_recall = sum_recall[max_index]

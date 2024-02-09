@@ -7,7 +7,7 @@ from utils.utils import *
 
 from solver import Solver
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 
 def str2bool(v):
     return v.lower() in ('true')
